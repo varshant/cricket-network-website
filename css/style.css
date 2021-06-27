@@ -238,7 +238,7 @@ h2 {
   font-weight: 700;
   color: #222;
   font-family: 'Montserrat';
-  font-size: 25px;
+  font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 32px; }
 
@@ -286,12 +286,12 @@ input, select {
   box-sizing: border-box;
   font-family: 'Montserrat';
   font-weight: 500;
-  font-size: 13px; }
+  font-size: 18px; }
   input:focus, select:focus {
     border: 1px solid #ff6801; }
 
 label {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   font-family: 'Montserrat';
   margin-bottom: 2px;
@@ -311,7 +311,7 @@ label {
   margin-right: 45px; }
   .form-radio-item label {
     font-weight: 500;
-    font-size: 13px;
+    font-size: 20px;
     padding-left: 25px;
     position: relative;
     z-index: 9;
@@ -415,7 +415,7 @@ select {
   display: inline-block;
   font-family: 'Poppins';
   font-weight: 400;
-  font-size: 13px;
+  font-size: 20px;
   padding: 10px;
   border: none;
   cursor: pointer; }
