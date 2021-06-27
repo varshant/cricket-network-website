@@ -13,7 +13,7 @@
     padding :5%;
 }
 .info{
-    background-color: #d32a0c;
+    background-color: #6577B3;
     color:white;
     padding:5%;
     border-radius: 1%;
@@ -27,7 +27,7 @@
 .btnn{
     width:50%;
     align-self: center;
-    background-color: #d32a0c;
+    background-color: #6577B3;
     margin-bottom:10px;
     height:50px;
     border:transparent;
@@ -49,4 +49,33 @@
 
 .information{
     font-weight: 400;
+}
+.socials a{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	border-radius: 50%;
+	margin: 0 5px;
+}
+.socials a i{
+	color:#fff;
+	padding:12px;
+}
+.socials a:nth-child(1){
+	background: #3b5998;
+}
+.socials a:nth-child(2){
+	background: #ff0000;
+}
+.socials a:nth-child(3){
+	background: #007bb5;
+}
+.socials a:nth-child(4){
+	background: #8a3ab9;
+}
+
+@media (max-width:800px){
+	.mx-30{
+		margin-bottom:30px;
+	}
 }
