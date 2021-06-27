@@ -238,7 +238,7 @@ h2 {
   font-weight: 700;
   color: #222;
   font-family: 'Montserrat';
-  font-size: 40px;
+  font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 32px; }
 
@@ -246,7 +246,7 @@ h2 {
   clear: both; }
 
 body {
-  font-size: 20px;
+  font-size: 30px;
   line-height: 1.8;
   color: #222;
   font-weight: 400;
