@@ -240,7 +240,9 @@ h2 {
   font-family: 'Montserrat';
   font-size: 30px;
   text-transform: uppercase;
-  margin-bottom: 32px; }
+  margin-bottom: 32px; 
+  word-spacing: 5px;
+}
 
 .clear {
   clear: both; }
