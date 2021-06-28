@@ -12,7 +12,8 @@
      function request(){
        alert(' Request send Successfully!!')
      }
-   </script> 
+   </script>
+   <script src="addtocart.js"></script>
 </head>
 <body>
     <div class="heading">
@@ -27,7 +28,7 @@
                 <p class="para">Definately not !! Thala</p>
                <p class="read">$999</p>
                <div class="flex">
-               <button class="btn">Add to cart</button>
+               <button class="btn addToCart">Add to cart</button>
                <button onclick="request()" class="btn2">Send Request</button>
                </div></p>
             </div>
@@ -40,7 +41,7 @@
                 <p class="para">We are Daredevils</p>
                <p class="read">$999</p>
                <div class="flex">
-               <button class="btn">Add to cart</button>
+               <button class="btn addToCart">Add to cart</button>
                <button onclick="request()" class="btn2">Send Request</button>
                </div>
               </p>
@@ -53,7 +54,7 @@
                 <p class="para">Halla bol!!</p>
                <p class="read">$999</p>
                <div class="flex">
-               <button class="btn">Add to cart</button>
+               <button class="btn addToCart">Add to cart</button>
                <button onclick="request()" class="btn2">Send Request</button>
                </div></p>
             </div>
@@ -65,7 +66,7 @@
                 <p class="para">Rise up to every challenge</p>
                <p class="read">$999</p>
                <div class="flex">
-               <button class="btn">Add to cart</button>
+               <button class="btn addToCart">Add to cart</button>
                <button onclick="request()" class="btn2">Send Request</button>
                </div></p>
             </div>
@@ -77,7 +78,7 @@
                     <p class="para">Tu Fan Nhi Toofan Hain</p>
                    <p class="read">$999</p>
                    <div class="flex">
-                   <button class="btn">Add to cart</button>
+                   <button class="btn addToCart">Add to cart</button>
                    <button onclick="request()" class="btn2">Send Request</button>
                    </div></p>
                 </div>
@@ -89,7 +90,7 @@
                         <p class="para">Ee Sala Cup Namde</p>
                        <p class="read">$999</p>
                        <div class="flex">
-                       <button class="btn">Add to cart</button>
+                       <button class="btn addToCart">Add to cart</button>
                        <button onclick="request()" class="btn2">Send Request</button>
                        </div></p>
                     </div>
@@ -101,7 +102,7 @@
                             <p class="para">We are the kings of punjab</p>
                            <p class="read">$999</p>
                            <div class="flex">
-                           <button class="btn">Add to cart</button>
+                           <button class="btn addToCart">Add to cart</button>
                            <button onclick="request()" class="btn2">Send Request</button>
                            </div></p>
                         </div>
@@ -113,12 +114,26 @@
                                 <p class="para">Defending Champians</p>
                                <p class="read">$999</p>
                                <div class="flex">
-                               <button class="btn">Add to cart</button>
+                               <button class="btn addToCart">Add to cart</button>
                                <button onclick="request()" class="btn2">Send Request</button>
                                </div></p>
                             </div>
                           </div>
                           
     </div>
+<script>
+      var toCartBtn = document.getElementsByClassName('addToCart');
+  
+      for(let c = 0; c < toCartBtn.length; c++){
+          toCartBtn[c].addEventListener('click', function(){ //a=name, b=role, c=img, d=rating, e=price
+            let a,b,c,d,e;
+            a = this.parentElement.parentElement.children[1].innerHTML;
+            b = this.parentElement.parentElement.children[2].innerHTML;
+            c = this.parentElement.parentElement.parentElement.children[0].getAttribute('src');
+            e = this.parentElement.parentElement.children[3].innerHTML;
+              storePlayer(a,b,c,d,e);
+          })
+      }
+  </script>
 </body>
 </html>
