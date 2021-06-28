@@ -11,6 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="addtocart.js"></script>
     </head>
     <body>
         <!-- Navigation Bar -->
@@ -19,7 +20,7 @@
         <div class = "players container">
             <h1 class = "Title"> You can see your Selected Players Here !</h1><br><br>
             <div class = "cart row" >
-                <div class = "col-md-4">
+<!--                 <div class = "col-md-4">
                     <div class="card" style="width: 18rem;" >
                         <img src="https://images.unsplash.com/photo-1593766821405-f605e0f9535f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y3JpY2tldGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -60,7 +61,7 @@
                         </button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div> 
             <br><br>   
             <a href="buyer_section.html" ><button class = "btn btn-success paybtn"> Proceed To Pay </button></a>
@@ -73,7 +74,7 @@
 
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -91,7 +92,28 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+        <script>
+    window.onload = () => {
+      let heading = document.getElementsByClassName('Title')[0];
+    console.log('called')
+        if(document.getElementsByClassName('col-md-4').length < 1){
+          heading.innerHTML = 'You have no player added to cart, please go to <b>Sellers players</b> section and buy some players to show up here.';
+        } else {
+          heading.innerHTML = ' You can see your Selected Players Here !'
+        }
+    }
+  </script>
+    <script>
+      getPlayer();
+  
+      let removeBtn = document.getElementsByClassName('btn btn-danger')
+      for(let k = 0; k < removeBtn.length; k++){
+        removeBtn[k].addEventListener('click', function(){
+          removePlayer.bind(this)(this.parentElement.children[0].innerHTML);
+        })
+      } 
+  </script>
 
 
     </body>
