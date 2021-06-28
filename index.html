@@ -304,7 +304,6 @@
       }
 
       function hideContainer(i) {
-        console.log('hideConatainer', i)
         let container = document.getElementsByClassName("formContainer")[i];
         container.style.animation = "zoomOut 0.2s linear";
         setTimeout(() => {
@@ -312,12 +311,8 @@
         }, 175);
       }
       function formReset(i){
-        // for( let i = 0; i < 3; i++) {
-          console.log('formreset',i)
           document.getElementsByClassName("login-form")[i].reset();
           document.querySelectorAll('input[name=email]')[i].nextElementSibling.style.display = 'none';
-        // }
-
       }
     </script>
 
