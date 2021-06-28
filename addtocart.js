@@ -15,7 +15,7 @@ function storePlayer(a,b,c,d=4.5,e='$0'){ //name, role, img, rating, cost --> pl
   // debugger
   for(let a = 0; a < arr.length; a++){
     if(arr[a].name == playerNumber.name)
-    return alert('Player already in cart')
+    return alert('already added in cart')
   }
   arr.push(playerNumber);
   localStorage.setItem('array', JSON.stringify(arr));
