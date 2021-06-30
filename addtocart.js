@@ -12,10 +12,9 @@ function storePlayer(a,b,c,d=4.5,e='$0'){ //name, role, img, rating, cost --> pl
     cost: e,
     img: c
   }
-  // debugger
   for(let a = 0; a < arr.length; a++){
     if(arr[a].name == playerNumber.name)
-    return alert('already added in cart')
+    return alert('Player already in cart')
   }
   arr.push(playerNumber);
   localStorage.setItem('array', JSON.stringify(arr));
@@ -76,7 +75,8 @@ function addPlayer(dum){
 }
 
 function removePlayer(p_name){
-  this.parentElement.parentElement.remove();
+  let removeElem = this.parentElement.parentElement;
+  removeElem.remove();
 
   let z = JSON.parse(localStorage.getItem('array'));
   arr = [];
@@ -88,3 +88,4 @@ function removePlayer(p_name){
   }
   localStorage.setItem('array',JSON.stringify(arr));
 }
+
