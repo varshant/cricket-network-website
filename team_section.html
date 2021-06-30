@@ -8,12 +8,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/team_section.css">
    <title>Team and Players</title>
-   <script>
-     function request(){
-       alert(' Request send Successfully!!')
-     }
-   </script>
    <script src="addtocart.js"></script>
+   <style>
+    .addToCart, .btn2 {
+      position: relative;
+    }
+    .added::after, .sent::after{
+      content: 'added to card';
+      position: absolute;
+      top:100%;
+      left: 0;
+      background-color: rgb(128, 206, 255);
+      color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+      animation: fadeIn 2s ease forwards;
+    }
+    .sent::after {
+      content: 'Request sent successfully!!';
+    }
+    @keyframes fadeIn {
+      from{display: block; opacity: 1;}
+      to {display: none; opacity: 0;}
+    }
+   </style>
 </head>
 <body>
     <div class="heading">
@@ -29,7 +47,7 @@
                <p class="read">$999</p>
                <div class="flex">
                <button class="btn addToCart">Add to cart</button>
-               <button onclick="request()" class="btn2">Send Request</button>
+               <button class="btn2">Send Request</button>
                </div></p>
             </div>
           </div>
@@ -42,7 +60,7 @@
                <p class="read">$999</p>
                <div class="flex">
                <button class="btn addToCart">Add to cart</button>
-               <button onclick="request()" class="btn2">Send Request</button>
+               <button class="btn2">Send Request</button>
                </div>
               </p>
             </div>
@@ -55,7 +73,7 @@
                <p class="read">$999</p>
                <div class="flex">
                <button class="btn addToCart">Add to cart</button>
-               <button onclick="request()" class="btn2">Send Request</button>
+               <button class="btn2">Send Request</button>
                </div></p>
             </div>
           </div>
@@ -67,7 +85,7 @@
                <p class="read">$999</p>
                <div class="flex">
                <button class="btn addToCart">Add to cart</button>
-               <button onclick="request()" class="btn2">Send Request</button>
+               <button class="btn2">Send Request</button>
                </div></p>
             </div>
           </div>
@@ -79,7 +97,7 @@
                    <p class="read">$999</p>
                    <div class="flex">
                    <button class="btn addToCart">Add to cart</button>
-                   <button onclick="request()" class="btn2">Send Request</button>
+                   <button class="btn2">Send Request</button>
                    </div></p>
                 </div>
               </div>
@@ -91,7 +109,7 @@
                        <p class="read">$999</p>
                        <div class="flex">
                        <button class="btn addToCart">Add to cart</button>
-                       <button onclick="request()" class="btn2">Send Request</button>
+                       <button class="btn2">Send Request</button>
                        </div></p>
                     </div>
                   </div>
@@ -103,26 +121,35 @@
                            <p class="read">$999</p>
                            <div class="flex">
                            <button class="btn addToCart">Add to cart</button>
-                           <button onclick="request()" class="btn2">Send Request</button>
+                           <button class="btn2">Send Request</button>
                            </div></p>
                         </div>
                       </div>
                         <div class="card sec" style="width: 18rem;">
-                            <img class="card-img-top" src="images/mi.jpg" alt="Card image cap">
-                            <div class="card-body sec">
-                              <p class="card-text"><h3 class="h3tag">MUMBAI INDIANS</h3>
-                                <p class="para">Defending Champians</p>
-                               <p class="read">$999</p>
-                               <div class="flex">
-                               <button class="btn addToCart">Add to cart</button>
-                               <button onclick="request()" class="btn2">Send Request</button>
-                               </div></p>
-                            </div>
+                          <img class="card-img-top" src="images/mi.jpg" alt="Card image cap">
+                          <div class="card-body sec">
+                            <p class="card-text">
+                              <h3 class="h3tag">MUMBAI INDIANS</h3>
+                              <p class="para">Defending Champians</p>
+                              <p class="read">$999</p>
+                              <div class="flex">
+                                <button class="btn addToCart">Add to cart</button>
+                                <button class="btn2">Send Request</button>
+                              </div>
+                            </p>
                           </div>
+                        </div>
                           
     </div>
-<script>
+    <script>
       var toCartBtn = document.getElementsByClassName('addToCart');
+      var requestBtn = document.getElementsByClassName('btn2');
+
+      for(let r = 0; r < requestBtn.length; r++) {
+        requestBtn[r].addEventListener('click', function(){
+          this.classList.add('sent');
+        })
+      }
   
       for(let c = 0; c < toCartBtn.length; c++){
           toCartBtn[c].addEventListener('click', function(){ //a=name, b=role, c=img, d=rating, e=price
@@ -130,8 +157,12 @@
             a = this.parentElement.parentElement.children[1].innerHTML;
             b = this.parentElement.parentElement.children[2].innerHTML;
             c = this.parentElement.parentElement.parentElement.children[0].getAttribute('src');
+            // d = this.parentElement.querySelectorAll('.checked').length;
+            // d = 4.5;
             e = this.parentElement.parentElement.children[3].innerHTML;
-              storePlayer(a,b,c,d,e);
+            storePlayer(a,b,c,d,e);
+
+            this.classList.add('added');
           })
       }
   </script>
